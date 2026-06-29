@@ -167,7 +167,6 @@ function loadProfile(json) {
     ['mob-kelas', s.kelas || '–'],
     ['mob-kode',  s.kode  || '–'],
   ]);
-
   const progres = json.progres || [];
   const sel = progres.filter(x => ns(x.status) === 'selesai').length;
   const pro = progres.filter(x => ns(x.status) === 'proses').length;
@@ -184,7 +183,7 @@ function loadProfile(json) {
     ['sb-fill',  'width', pct + '%'],
     ['mob-fill', 'width', pct + '%'],
   ]);
-
+  
   // Notification dots
   if (bel > 0) {
     ['snd-tugas', 'mnd-tugas'].forEach(id => document.getElementById(id).classList.remove('hidden'));
@@ -648,7 +647,7 @@ function openWeeklyModal(tg) {
     catatan_guru: tg.catatan_guru || null,
     tanggal_mulai:tg.tanggal_diberi || null,
     deadline:     tg.deadline || null,
-    video:        tg.video || null,
+    video:        tg.link_youtube || tg.video || null,
     link_tugas:   tg.link_tugas || null,
     poin:         tg.poin,
     _isPoin:      true,
