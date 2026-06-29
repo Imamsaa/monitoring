@@ -368,11 +368,24 @@
         <div class="modal-note-lbl" style="color:#1e40af;">💬 Catatan Guru</div>
         <div class="modal-note-text" style="color:#1e40af;" id="mm-note-text"></div>
       </div>
-      <div id="mm-file" class="hidden">
-        <a id="mm-file-link" href="#" target="_blank" class="modal-file-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <div id="mm-note" class="modal-note hidden" style="background:#eff6ff;border-left:3px solid #3b82f6;">
+        <div class="modal-note-lbl" style="color:#1e40af;">💬 Catatan Guru</div>
+        <div class="modal-note-text" style="color:#1e40af;" id="mm-note-text"></div>
+      </div>
+      
+      <div id="mm-actions" style="display:flex; gap:10px; margin-bottom:12px;">
+        
+        <a id="mm-slide-link" href="#" target="_blank" class="modal-file-btn hidden" style="flex:1; margin-bottom:0; background:#fff7ed; color:#ea580c; border-color:#fed7aa;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          Lihat Slide
+        </a>
+
+        <a id="mm-file-link" href="#" target="_blank" class="modal-file-btn hidden" style="flex:1; margin-bottom:0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Lihat File
         </a>
+        
+      </div>
       </div>
     </div>
   </div>

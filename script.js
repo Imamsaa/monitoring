@@ -615,12 +615,26 @@ function openMateriModal(m) {
     document.getElementById('mm-note-text').textContent = m.catatan_guru;
   } else nEl.classList.add('hidden');
 
-  const fEl = document.getElementById('mm-file');
-  const fu  = m.file || m.link_file || m.link_tugas;
-  if (fu) {
-    fEl.classList.remove('hidden');
-    document.getElementById('mm-file-link').href = fu;
-  } else fEl.classList.add('hidden');
+  // 1. Logika Tombol Google Slide (Muncul jika ada link di database)
+  const slideLink = document.getElementById('mm-slide-link');
+  if (m.slide && String(m.slide).trim() !== '') {
+    slideLink.classList.remove('hidden');
+    slideLink.href = m.slide;
+  } else {
+    slideLink.classList.add('hidden');
+  }
+
+  // 2. Logika Tombol Lihat File 
+  // (HANYA muncul jika ada link DAN status tugas sudah "Selesai")
+  const fileLink = document.getElementById('mm-file-link');
+  const fu = m.file || m.link_file || m.link_tugas;
+  
+  if (fu && n === 'selesai') { 
+    fileLink.classList.remove('hidden');
+    fileLink.href = fu;
+  } else {
+    fileLink.classList.add('hidden');
+  }
 
   document.getElementById('modal-materi').classList.remove('hidden');
 }
