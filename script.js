@@ -405,7 +405,7 @@ function showMateriList(title, items) {
             ${m.nilai ? `<span style="display:inline-block; margin-left:6px; padding:2px 6px; background:#dcfce7; color:#15803d; border-radius:6px; font-size:10px; border:1px solid #bbf7d0;">Nilai: ${m.nilai}</span>` : ''}
           </div>
           <div class="mi-status" style="color:${isLocked ? '#6b7280' : (n==='selesai'?'#16a34a':n==='proses'?'#d97706':'#9ca3af')};">
-            ${isLocked ? '🔒 Terkunci' : (n==='selesai'?'✅ Selesai':n==='proses'?'⏳ Dalam Proses':'⏸ Belum Mulai')}
+            ${isLocked ? '🔒 Terkunci' : (n==='selesai'?'✅ Selesai':n==='proses'?'⏳ Dalam Proses':'⏸ Belum Dikerjakan')}
           </div>
           ${m.deadline ? `<div class="mi-date">Deadline: ${fmtShort(m.deadline)}</div>` : ''}
         </div>
@@ -570,7 +570,7 @@ function openMateriModal(m) {
     const map = {
       selesai: ['#f0fdf4','#22c55e','#15803d','✅ Selesai'],
       proses:  ['#fffbeb','#f59e0b','#92400e','⏳ Dalam Proses'],
-      belum:   ['#fff5f5','#ef4444','#991b1b','⏸ Belum Mulai'],
+      belum:   ['#fff5f5','#ef4444','#991b1b','⏸ Belum Dikerjakan'],
     };
     const [bg, bc, tc, lbl] = map[n];
     sb.style.cssText = `background:${bg};border:1.5px solid ${bc};border-radius:12px;padding:10px 14px;margin-bottom:12px;display:flex;align-items:center;gap:10px;`;
